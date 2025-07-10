@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mtodo - Add</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <header>
+        <h1>Mtodo - Malick k7</h1>
+        <ul>
+          <a href=" {% url 'index-page' %} "><li>Acceuil</li></a>
+          <a href="{% url 'add-page'%}"><li> + </li></a>
+        </ul>
+    </header>
+    <form  method="post" action="{%url 'add-note'%} ">
+        {% csrf_token %}
+        <input class="text" type="text" name="titre" placeholder="Entrez le nom de votre note......" required><br>
+        <textarea cols="50" rows="20" class="textarea" placeholder="Notez ici ...." name="description" required></textarea><br>
+        <button type="submit" > Ajouter </button>
+    </form>
+</body>
+</html>

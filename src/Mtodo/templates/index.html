@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title> Mtodo </title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+      <header>
+        <h1>Mtodo - Malick k7</h1>
+        <ul>
+          <a href=" {% url 'index-page' %} "><li>Acceuil</li></a>
+          <a href="{% url 'add-page'%}"><li> + </li></a>
+        </ul>
+      </header>
+      <section class="present">
+          <h2>Notes</h2>
+          {% for note in note %}
+          <div class="notes-div">
+            <div class="note">
+              <a href="{% url 'note_details' slug=note.slug %}"> <h3>{{ note.titre|safe }}</h3></a>
+              <div>
+                <a href="{% url 'update_page' slug=note.slug %}"><img style="padding:1rem; background-color:blue;border-radius: 10px;" src="{% static 'img/svg/edit-2.svg' %}"></a>
+                <a href="{% url 'delete_page' pk=note.pk %}" ><b style="padding:1rem; background-color:red;border-radius: 10px;"> - </b></a>
+              </div>
+                <p>{{note.date}}</p>
+            </div>
+          </div>
+          {% endfor %}
+      </section>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mtodo - Note Details</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <header>
+        <h1>Mtodo - Malick k7</h1>
+        <ul>
+          <a href=" {% url 'index-page' %} "><li>Acceuil</li></a>
+          <a href="{% url 'add-page'%}"><li> + </li></a>
+        </ul>
+    </header>
+    <section class="pre">
+        <h1>{{ note.titre|safe }}</h1>
+        <div>{{ note.description|safe }}</div>
+    </section>
+</body>
+</html>

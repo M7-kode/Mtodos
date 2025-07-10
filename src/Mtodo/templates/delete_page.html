@@ -1,0 +1,24 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mtodo Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mtodo - Malick k7</h1>
+        <ul>
+          <a href=" {% url 'index-page' %} "><li>Acceuil</li></a>
+          <a href="{% url 'add-page'%}"><li> + </li></a>
+        </ul>
+    </header>
+    <p>Voulez supprimer la note {{ note.titre}} ?</p>
+    <form action="{% url 'delete_note' pk=note.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" name="oui" value="oui">
+        <input type="submit" name="non" value="non">
+    </form>
+</body>
+</html>
