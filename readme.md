@@ -9,10 +9,6 @@
     [x]Suprimer le contenu de la note.  
     [x]Modifier le contenu de la note.
 
-# Super User Creating
-     [x] Nom : Malick  
-     [x] Mot de pass : malick//1  
-     [x] e-mail : aminoumalickmich@gmail.com
 
 # Models
 
